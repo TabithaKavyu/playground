@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body onload="setInterval(()=>document.body.innerHTML=new Date().toGMTString(3).slice(17,25))">
+    <h2></h2>
+    <script>
+        // for (i = 0; ++i < 101; console.log(i % 5 ? f || i : f + 'Buzz'))f = i % 3 ? '' : 'Fizz'
+        const arr = new Array;
+        const arr2 = [1, 2, 3, 3]
+
+        console.log("Before set")
+        arr2.forEach(i => {
+            console.log(i)
+        })
+
+        console.log("After Set")
+        const arrl = [...new Set(arr2)]
+        arrl.forEach(i => {
+            console.log(i)
+        })
+
+        for (i = 0; ++i < 10;) {
+            arr[i] = i;
+            // console.log(arr[i])
+        }
+        // console.log("Length of array", arr.length)
+
+        // console.log("True or false", 0.1+0.1)
+
+        const customers = [
+            { id: '1', name: 'John Doe', email: 'jdoe@gmail.com', age: 35 },
+            { id: '2', name: 'Mary Martin', email: 'martin@gmail.com', age: 25 },
+            { id: '3', name: 'Joe Jackson', email: 'jackson@gmail.com', age: 55 },
+        ]
+
+        customers.forEach( i => {
+            console.log("Customers", i.id);
+            if (i.id == "1"){
+                console.log("You are number one")
+            }
+        })
+
+    </script>
+</body>
+
+</html>

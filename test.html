@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //Return largest number in an array
+        let tabby = 0;
+        const arr = [1, 5, 6, 3, 2]
+        console.log("Largest Number", Math.max.apply(null, arr))
+
+        // Check if a string (first argument, str) starts with the given target string (second argument, target).
+        const funTabby = (str, target) => {
+            let regtab = new RegExp("^" + target, "i")
+            let result = regtab.test(str);
+            console.log(result);
+        }
+        funTabby("Gypsy", "G")
+
+        //Check if a string (first argument, str) ends with the given target string (second argument, target).
+        function confirmEnding(str, target) {
+            // "Never give up and good luck will find you."
+            // -- Falcor
+            let re = new RegExp(target + "$", "i");
+            let result = re.test(str);
+            return result;
+        }
+
+        let finr = confirmEnding("Bastian", "n");
+        console.log(finr === true ? 'Yaaaay' : 'Nooooo')
+
+        function repeatStringNumTimes(str, num) {
+            let res = "";
+            if (num > 0) {
+                for (i = 0; i< num; i++){
+                    res += str;
+                }
+            }
+            else {
+                res = ' '
+            }
+            // repeat after me
+            console.log(res);
+        }
+
+        repeatStringNumTimes("abc", 3);
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
