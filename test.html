@@ -35,7 +35,7 @@
         function repeatStringNumTimes(str, num) {
             let res = "";
             if (num > 0) {
-                for (i = 0; i< num; i++){
+                for (i = 0; i < num; i++) {
                     res += str;
                 }
             }
@@ -47,6 +47,60 @@
         }
 
         repeatStringNumTimes("abc", 3);
+
+        //Truncating a string
+
+        function truncateString(str, num) {
+
+            if (str.length > num) {
+                return str.slice(0, num) + "...";
+            }
+
+            else {
+
+                return str;
+            }
+
+            return str;
+        }
+
+        let truncstr = truncateString("A-tisket a-tasket A green and yellow basket", 8);
+        console.log(truncstr);
+
+        //Finders keepers
+        function findElement(arr, func) {
+            return arr.find(func);
+
+        }
+
+        let findel = findElement([1, 2, 3, 4], num => num % 2 === 0);
+        console.log(findel); // logs 2
+
+        //   find() returns the first element in the array that passes a truth test (second argument). 
+
+        const arr1 = [9, 11, 8, 130, 17];
+
+        const foundfirst = arr1.find(element => element > 10);
+
+        console.log(foundfirst); // expected output: 11
+
+        function booWho(bool) {
+
+            let t = false; //boolean primitive
+
+            if (t !== bool) {
+                return true;
+            }
+            else {
+                return false;
+            }
+            // What is the new fad diet for ghost developers? The Boolean.
+            return bool;
+        }
+
+        let finalBool = booWho(null);
+        console.log("Check bool primitive",finalBool)
+
 
 
 

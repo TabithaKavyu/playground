@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //iterate over all properties
+        function Cat(name) {
+            this.name = name; //Own property
+        }
+
+        Cat.prototype.numLegs = 4; //prototype property
+
+        let Tabby = new Cat("Tabz");
+
+        let ownProps = [];
+        let prototypeProps = [];
+
+        // Add your code below this line
+        for (let property in Tabby) {
+            if (Tabby.hasOwnProperty(property)) {
+                ownProps.push(property);
+            } else {
+                prototypeProps.push(property);
+            }
+        }
+
+        console.log(ownProps); // prints ["name"]
+        console.log(prototypeProps); //prints["numLegs"]
+
+    </script>
+</head>
+
+<body>
+
+
+</body>
+
+</html>
