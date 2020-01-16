@@ -128,6 +128,23 @@
     bird.glide();
     boat.glide();
 
+   //Use Closure to Protect Properties Within an Object from Being Modified Externally
+        
+   function Bird() {
+   let weight = 15; // private variable
+
+   /* publicly available method that a bird object can use */
+   this.getWeight = function() { 
+     return weight;
+      };
+  }
+        
+  let dove = new Bird();
+  let result = dove.getWeight();
+  console.log(result)
+
+
+
 
 
 
