@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Object Oriented Programming </title>
     <script>
         //iterate over all properties
         function Cat(name) {
@@ -66,6 +66,26 @@
 
        let duck = new Bird();
        let beagle = new Dog();
+        
+     //Adding methods after inheritance
+        function Animal() { }
+        Animal.prototype.eat = function() { console.log("nom nom nom"); };
+
+        function Dog() { }
+
+    // Dog object inherits from Animal
+      Dog.prototype = Object.create(Animal.prototype);
+      Dog.prototype.constructor = Dog;
+
+   // Add method unique to Dog
+      Dog.prototype.bark = function() {
+       console.log("Woof!");
+       };
+
+    let beagle = new Dog();
+
+    beagle.eat(); // Should print "nom nom nom"
+    beagle.bark(); // Should print "Woof!"
 
 
 
