@@ -30,6 +30,26 @@
 
         console.log(ownProps); // prints ["name"]
         console.log(prototypeProps); //prints["numLegs"]
+        
+        //inherit behaviours from a supertype
+        
+       function Animal() { }
+
+      Animal.prototype = {
+          constructor: Animal,
+          eat: function() {
+        console.log("nom nom nom");
+        }
+       };
+
+
+
+      let duck = Object.create(Animal.prototype); 
+      let beagle = Object.create(Animal.prototype); 
+
+      duck.eat(); // Should print "nom nom nom"
+      beagle.eat(); // Should print "nom nom nom"
+
 
     </script>
 </head>
