@@ -86,6 +86,24 @@
 
     beagle.eat(); // Should print "nom nom nom"
     beagle.bark(); // Should print "Woof!"
+        
+  //override inherited methods
+    function Bird() { }
+
+    Bird.prototype.fly = function() { return "I am flying!"; };
+
+    function Penguin() { }
+    Penguin.prototype = Object.create(Bird.prototype);
+    Penguin.prototype.constructor = Penguin;
+
+    // overriding the fly method
+    Bird.prototype.fly = function() {
+     return "Alas, this is a flightless bird";
+    }
+
+    let penguin = new Penguin();
+    console.log(penguin.fly());
+
 
 
 
