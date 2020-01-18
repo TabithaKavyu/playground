@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rest & Spread Operators Playground</title>
+    <script>
+
+        // **************************************************************************************************************
+
+        //CASE 1
+        //  Using rest operator for a function with unknown number of arguments, 
+        // but we're interested in the first item and put the rest in an array called remainder
+        const items = (firstElement, ...remainder) => {
+            console.log(firstElement);
+            console.log(remainder);
+        }
+        console.log("1st Case-Using Rest Operator:")
+        items("Apple", "Mango", "Orange", "Grapes", "Pears", "Pineapple")
+
+        // **************************************************************************************************************
+
+        // CASE 2 :Using spread operator to print out items in an array and also "spreading" items from one
+        // array into another
+        // The function fashion takes a single array as a parameter
+
+        const shoes = ["Addidas", "Nike", "Supreme", "Sketchers", "D&G"]
+
+        const fashion = (array) => {
+            console.log(...array) //spread one item at a time instead of printing the whole array
+        }
+        console.log("2nd Case- Spread Operator to print out items in an array")
+        fashion(["Gucci", "Louis Vutton", ...shoes]); //spreading items in shoes array into the new array
+
+        // **************************************************************************************************************
+
+        // CASE 3: Using both rest and spread operators interchangably
+        // Function takes in an unknown number of args as a parameter and use spread for different purposes
+
+        const food = (...food) => { //spread operator used as we don't know how many args would be provided
+            const extra = ['Pie', 'Shawarma', ...food] //spreading items of array food into the array extra
+            console.log(extra)
+            console.log("Let's be a bit extra and print one item at a time:", ...extra) //printing one item at a time
+        }
+        console.log("3rd Case: Using rest and spread operators interchangably to serve different purposes")
+        food("Chapati", "Biryani", "Pilau", "Mathobosha", "Chicken Nuggets")
+
+        // **************************************************************************************************************
+
+        //CASE 4: Using rest in object
+        // Assuming a response from an API, say using GraphQL, and we're only interested in the users property in the object
+        // we can use the destructuring technique and save the remainder in another variable
+
+        const response = {
+            users: [
+                {
+                    name: 'Tabitha Kavyu',
+                    occupation: 'Software Developer: JavaScript Codess'
+                },
+                {
+                    name: 'Eden Hazard',
+                    occupation: 'Footballer'
+                }
+            ],
+            response_time: '20ms',
+            cached: true,
+            request_count: 2
+        }
+
+        const { users, ...metadata } = response; //destructuring and putting the rest of the info into an array called metadata
+
+        console.log("This is metadata:", metadata);
+        console.log("This is the user property", users);
+
+        // **************************************************************************************************************
+
+        // CASE 5: Using spread in object
+        // We can also use the spread operator to concatenate one object with another
+
+        const res = {
+            user: [
+                {
+                    name: 'Tabitha Kavyu',
+                    occupation: 'Software Developer: JavaScript Codess'
+                },
+                {
+                    name: 'Eden Hazard',
+                    occupation: 'Footballer'
+                }
+            ],
+            response_time: '20ms',
+            cached: true,
+            request_count: 2
+        }
+
+        const { user, ...data } = res; //destructuring and putting the rest of the info into an array called metadata
+
+        const merger = { user, ...data } // using spread to merge both variable into one object called merger
+
+        console.log("I am merged and this is all I have for you:", merger)
+
+        // **************************************************************************************************************
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
