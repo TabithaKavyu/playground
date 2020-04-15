@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects and Mapping</title>
+
+    <script>
+        data = {
+            "Global": {
+                "NewConfirmed": 100282,
+                "TotalConfirmed": 1162857,
+                "NewDeaths": 5658,
+                "TotalDeaths": 63263,
+                "NewRecovered": 15405,
+                "TotalRecovered": 230845
+            },
+        };
+
+        const { Global } = data;
+        const {NewConfirmed, TotalConfirmed} = Global
+        console.log(NewConfirmed);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<body ng-app="to_do.demo">
+    {% verbatim %}
+    <div ng-controller="To_doController">
+        <div ng-repeat="list in data">
+            <h3>{{ list.name }}</h3>
+            <ul>
+                <li ng-repeat="card in list.cards">{{ card.title }}</li>
+            </ul>
+        </div>
+
+    </div>
+    {% endverbatim %}
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+
+    <script>
+        const fn = () => {
+            'use strict';
+            angular.module('to_do.demo', [])
+                .controller('To_doController', ['$scope', To_doController]);
+            function To_doController($scope) {
+                $scope.data = [
+                    {
+                        name: 'Django demo',
+                        cards: [
+                            {
+                                title: 'Create Models'
+                            },
+                            {
+                                title: 'Create View'
+                            },
+                            {
+                                title: 'Migrate Database'
+                            },
+                        ]
+                    },
+                    {
+                        name: 'Angular demo',
+                        cards: [
+                            {
+                                title: 'Write Html'
+                            },
+                            {
+                                title: 'Write JavaScript'
+                            },
+                        ]
+                    }
+
+                ]
+            }
+        };
+
+        fn();
+
+    </script>
+</body>
