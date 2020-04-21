@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django X Angular</title>
+</head>
+
+<body>
+    <script>
+        const velda = () => {
+            'use strict';
+            angular.module('to_do.demo')
+                .directive('to_doCard', CardDirective);
+            function CardDirective() {
+                return {
+                    templateUrl: 'static/to_do/card.html',
+                    restrict: 'E'
+                };
+            }
+        }
+        velda();
+    </script>
+</body>
+
+</html>
